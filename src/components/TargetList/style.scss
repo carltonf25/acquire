@@ -1,0 +1,20 @@
+$cardShadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+$hoverShadow: 0 6px 8px 0 hsla(0, 0%, 0%, 0.2);
+.target-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.target-card {
+    border: 1px solid rgba(230, 230, 230, 0.7);
+    max-width: 300px;
+    margin: 1em;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    box-shadow: $cardShadow;
+}
+
+.target-card:hover {
+    transform: scale(1.03);
+    box-shadow: $hoverShadow;
+}

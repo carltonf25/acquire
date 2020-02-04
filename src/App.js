@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import mockTargetData from './mockTargetData.js';
+import './App.scss';
+// Context
+import TargetContext from './TargetContext';
+// Router
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+// Components
+import TargetList from './components/TargetList';
+import TargetBuilder from './components/TargetBuilder';
+import Header from './components/Header';
 
-function App() {
+const App = () => {
+  let [targets, setTargets] = useState({});
+
+  useEffect(() => {
+    setTargets({ mockTargetData });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TargetContext.Provider value={targets}>
+      <Router>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route path="/targets">
+              <TargetList />
+            </Route>
+            <Route path="/create">
+              <TargetBuilder />
+            </Route>
+            <Route path="/edit">
+              <TargetBuilder />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </TargetContext.Provider>
   );
-}
+};
 
 export default App;
