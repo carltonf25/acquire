@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 
-export const Header = () => {
+export const Nav = () => {
   return (
-    <nav>
+    <nav className="side-nav">
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -20,4 +20,4 @@ export const Header = () => {
   );
 };
 
-export default Header;
+export default Nav;
