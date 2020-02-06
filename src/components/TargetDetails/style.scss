@@ -52,6 +52,9 @@ $white: #fff;
 .target-summary {
   grid-column: 2;
   grid-row: 2;
+  margin-top: 2em;
+  border-top: 3px solid $deepPurple;
+  min-height: 300px;
 }
 
 .chart-container {

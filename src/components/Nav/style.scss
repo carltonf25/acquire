@@ -1,36 +1,41 @@
 // palette
-$lightestPurple: #EFF3F8;
-$deepPurple: #6C77C6;
+$lightestPurple: #eff3f8;
+$deepPurple: #6c77c6;
 $white: #fff;
 
 nav {
-    background: #fff;
-    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  background: #ffffff;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 nav ul {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30vh;
-    margin-bottom: 30vh;
-    padding: 1em;
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30vh;
+  margin-bottom: 30vh;
+  padding: 1em;
 }
 
-nav ul li { 
-    list-style-type: none;
-    display: block;
-    margin: 1em;
+nav ul li {
+  list-style-type: none;
+  display: block;
+  margin: 1em;
 
-    a {
-        text-decoration: none;
-        transition: 0.2s ease-in-out;
-        color: $deepPurple;
-        font-weight: 600;
+  a {
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+    color: $deepPurple;
+    font-weight: 600;
+    img {
+      transition: 0.2s ease-in-out;
     }
-    a:hover {
+  }
+  a:hover img {
     color: #34324b;
-    }
-
-    
+    transform: translate(0, -2px);
+  }
+  a:active {
+    background: $lightestPurple;
+  }
 }
