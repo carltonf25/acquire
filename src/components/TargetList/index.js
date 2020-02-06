@@ -6,19 +6,18 @@ import TargetCard from './TargetCard';
 
 export const TargetList = () => {
   const [targets, setTargets] = useState(mockTargetData);
+
   return (
-    <>
+    <div className="wrapper">
       <h1>Your Targets</h1>
       <div className="target-card-container">
         <ul>
           {targets.map(target => (
-            <Link to={`/targets/${target.id}/details`}>
-              <TargetCard target={target} />
-            </Link>
+            <TargetCard target={target} />
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 

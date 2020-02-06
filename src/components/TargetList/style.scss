@@ -1,31 +1,4 @@
-/* shadow settings */
-$cardShadow: 0 4px 6px 0 hsla(300, 8%, 26%, 0.2);
-$hoverShadow: 0 6px 8px 0 hsla(300, 8%, 26%, 0.2);
-
 .target-card-container {
-    grid-column: 2;
-    grid-row: 2;
-    justify-items: center;
-    align-items: center;
-}
-
-.target-card {
-    border: 1px solid rgba(230, 230, 230, 0.7);
-    background: #fff;
-    margin: 1em;
-    padding: 1em;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    max-width: 180px;
-    height: 180;
-    box-shadow: $cardShadow;
-
-    a {
-        text-decoration: none;
-    }
-}
-
-.target-card:hover {
-    transform: scale(1.03);
-    box-shadow: $hoverShadow;
+  grid-column: 2;
+  grid-row: 2;
 }

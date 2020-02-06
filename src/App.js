@@ -12,7 +12,7 @@ import TargetBuilder from './components/TargetBuilder';
 import Nav from './components/Nav';
 
 const App = () => {
-  let [targets, setTargets] = useState({});
+  let [targets, setTargets] = useState([]);
 
   useEffect(() => {
     setTargets({ mockTargetData });
@@ -28,7 +28,7 @@ const App = () => {
               <Route exact path="/targets">
                 <TargetList />
               </Route>
-              <Route path="/targets/:id/details">
+              <Route path="/targets/:id/">
                 <TargetDetails />
               </Route>
               <Route path="/create">
