@@ -9,6 +9,7 @@ $hoverShadow: 0 6px 8px 0 hsla(300, 8%, 26%, 0.2);
 
 body {
   background: $lightestPurple;
+  font-family: ProximaSoft-Regular;
 }
 
 .App {
@@ -27,7 +28,8 @@ body {
 .wrapper {
   display: grid;
   grid-template-columns: 20px 1fr 20px;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto;
+  width: 100%;
 }
 
 .side-nav {
@@ -46,8 +48,7 @@ body {
   padding: 1em;
   cursor: pointer;
   transition: 0.2s ease-in-out;
-  max-width: 180px;
-  height: 180;
+  width: 200px;
   box-shadow: $cardShadow;
 
   a {

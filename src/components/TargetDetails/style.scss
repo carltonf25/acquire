@@ -6,20 +6,19 @@ $white: #fff;
 .details-page {
   display: grid;
   grid-template-columns: 10% 1fr 10%;
-  grid-template-rows: 250 auto 1fr;
+  grid-template-rows: 250px 300px 1fr;
 }
 
 .card-block {
   grid-column: 2;
   grid-row: 1;
   padding: 0px;
-  margin: 0;
   display: flex;
   align-items: flex-start;
 
   .metric-card {
     border-radius: 10px;
-    min-width: 150px;
+    width: 150px;
     height: 150px;
     display: inline-block;
     margin-top: -15px;
@@ -52,9 +51,10 @@ $white: #fff;
 .target-summary {
   grid-column: 2;
   grid-row: 2;
-  margin-top: 2em;
+  margin-top: 4em;
   border-top: 3px solid $deepPurple;
   min-height: 300px;
+  margin-bottom: 0;
 }
 
 .chart-container {

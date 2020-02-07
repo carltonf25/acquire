@@ -12,14 +12,14 @@ import TargetBuilder from './components/TargetBuilder';
 import Nav from './components/Nav';
 
 const App = () => {
-  let [targets, setTargets] = useState([]);
+  let [targets, setTargets] = useState(mockTargetData);
 
-  useEffect(() => {
-    setTargets({ mockTargetData });
-  }, []);
-
+  let appContext = {
+    targets,
+    setTargets,
+  };
   return (
-    <TargetContext.Provider value={targets}>
+    <TargetContext.Provider value={appContext}>
       <Router>
         <div className="App">
           <Nav />

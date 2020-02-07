@@ -2,16 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 
-import homeIcon from '../../img/home-icon.png';
-import targetIcon from '../../img/target-icon.png';
-import createIcon from '../../img/create-icon.png';
+import homeIcon from '../../assets/img/home-icon.png';
+import targetIcon from '../../assets/img/target-icon.png';
+import createIcon from '../../assets/img/create-icon.png';
 
 export const Nav = () => {
   return (
     <nav className="side-nav">
       <ul>
+        <li>acquire</li>
         <li>
-          <Link to="/">
+          <Link to="/targets">
             <img alt="home" src={homeIcon} />
           </Link>
         </li>

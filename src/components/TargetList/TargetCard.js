@@ -1,18 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import StatusBadge from '../StatusBadge';
+import { useHistory } from 'react-router';
 
 const TargetCard = ({ target }) => {
-  console.log(target);
+  let history = useHistory();
+
+  let handleClick = () => {
+    history.push(`/targets/${target.id}`);
+  };
   return (
-    <Link to={`/targets/${target.id}`}>
-      <div className="card">
-        <h3>{target.name}</h3>
-        <p>GP: {target.grossProfit}</p>
-        <p>Est. {target.yearEstablished}</p>
-        <StatusBadge status={target.status} />
-      </div>
-    </Link>
+    <div onClick={handleClick} className="card">
+      <h3>{target.name}</h3>
+      <p>GP: {target.grossProfit}</p>
+      <p>Est. {target.yearEstablished}</p>
+      <StatusBadge status={target.status} />
+    </div>
   );
 };
 
