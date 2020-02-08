@@ -18,6 +18,10 @@ const App = () => {
     targets,
     setTargets,
   };
+
+  useEffect(() => {
+    setTargets(targets);
+  }, [targets])
   return (
     <TargetContext.Provider value={appContext}>
       <Router>

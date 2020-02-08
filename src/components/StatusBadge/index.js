@@ -1,36 +1,35 @@
 import React from 'react';
-import './style.scss';
+import style from './style.scss';
 
 const StatusBadge = ({ status }) => {
   let getColor = status => {
+    let colorScheme;
     switch (status) {
       case 'In Review':
-        return '#c6f6fc';
+        colorScheme = 'inReview';
         break;
 
       case 'Pending':
-        return '#f9fbc0';
+        colorScheme = 'pending';
         break;
 
       case 'Approved':
-        return '#15ff9c';
+        colorScheme = 'approved';
         break;
 
       case 'Denied':
-        return 'tomato';
+        colorScheme = 'denied';
         break;
 
-        return '#eff3f9';
       default:
         break;
     }
+    console.log(style.pending);
+    return colorScheme;
   };
   return (
     <div
-      style={{
-        backgroundColor: getColor(status),
-      }}
-      className="status-badge"
+      className={`status-badge + ${getColor(status)}`}
     >
       {status}
     </div>

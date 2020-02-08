@@ -1,11 +1,13 @@
 // palette
 $lightestPurple: #eff3f8;
 $deepPurple: #6c77c6;
+$deepPurpleHover: #4e558a;
 $white: #fff;
 
 /* shadow settings */
-$cardShadow: 0 4px 6px 0 hsla(300, 8%, 26%, 0.2);
+$shadow: 0 4px 6px 0 hsla(300, 8%, 26%, 0.2);
 $hoverShadow: 0 6px 8px 0 hsla(300, 8%, 26%, 0.2);
+
 
 body {
   background: $lightestPurple;
@@ -27,7 +29,7 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 20px 1fr 20px;
+  grid-template-columns: 1fr 3fr 1fr; 
   grid-template-rows: auto;
   width: 100%;
 }
@@ -41,58 +43,46 @@ body {
   grid-area: main;
 }
 
+.btn {
+  transition: 0.2s ease-in-out; 
+  cursor: pointer;
+  &:hover {
+    box-shadow: $hoverShadow;
+  }
+  &.primary {
+  background: $deepPurple;
+  color: $white;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  box-shadow: $shadow;
+  &:hover {
+    background: $deepPurpleHover;
+  }
+  }
+  &.secondary {
+    background: none;
+    padding: 9px;
+    border: none;
+    font-weight: bold;
+    box-shadow: $shadow;
+    color: $deepPurple;
+    border: 1px solid $deepPurple;
+    &:hover {
+      color: $deepPurpleHover;
+    }
+  }
+}
+
 .card {
   border: 1px solid rgba(230, 230, 230, 0.7);
   background: #fff;
   margin: 1em;
   padding: 1em;
-  cursor: pointer;
   transition: 0.2s ease-in-out;
   width: 200px;
-  box-shadow: $cardShadow;
-
-  a {
-    text-decoration: none;
+  box-shadow: $shadow;
+  &:hover {
+    box-shadow: $hoverShadow;
   }
-}
-
-.card:hover {
-  transform: scale(1.03);
-  box-shadow: $hoverShadow;
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-footer {
-  grid-area: footer;
-  background: $deepPurple;
-  padding: 1em;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+} 

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import './style.scss';
 import TargetContext from '../../TargetContext';
 import { useSpring, animated } from 'react-spring';
+import editIcon from '../../assets/img/edit-icon.png';
 
 // components
 import InfoCard from './InfoCard';
@@ -98,7 +99,7 @@ const TargetDetails = () => {
           </LineChart>{' '}
         </div>
       </div>
-    </animated.div>
+    </animated.div >
   );
 };
 

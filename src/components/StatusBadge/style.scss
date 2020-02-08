@@ -1,7 +1,31 @@
+// bg-colors
+$inReview:#d4f1f5;
+$pending: #fbfdb7;
+$approved: #15ff9c;
+$denied: tomato;
+$default: #eff3f9;
+
 .status-badge {
-  max-width: 50%;
+max-width: 50%;
   margin: 0 auto;
   font-size: 12px;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 5px;
+}
+
+.inReview {
+  background: $inReview;
+}
+.pending {
+  background: $pending;
+}
+.approved {
+  background: $approved;
+}
+.denied {
+  background: $denied;
+  color: #fff;
+}
+.inReview {
+  background: $inReview;
 }

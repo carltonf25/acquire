@@ -1,12 +1,24 @@
 // palette
 $lightestPurple: #eff3f8;
 $deepPurple: #6c77c6;
+$deepPurpleHover: #4e558a;
 $white: #fff;
 
 .details-page {
   display: grid;
-  grid-template-columns: 10% 1fr 10%;
+  grid-template-columns: 10% 80% 10%;
   grid-template-rows: 250px 300px 1fr;
+}
+
+.edit-icon {
+  margin-top: 1em;
+  width: 2em;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  grid-column: 3;
+  &:hover {
+    transform: translate(-1px, -1px);
+  }
 }
 
 .card-block {
@@ -24,10 +36,26 @@ $white: #fff;
     margin-top: -15px;
     font-size: 18px;
     cursor: default;
-    span:first-child {
+    a {
+      margin-left: 80%;
       display: block;
-      margin-bottom: 3em;
-      margin-top: 2em;
+      text-decoration: none;
+      color: $deepPurple;
+      font-weight: 600;
+      transition: 0.2s ease-in-out;
+      &:hover {
+        color: $deepPurpleHover;
+      }
+      margin-bottom: 2em;
+    }
+    span {
+      display: block;
+    }
+    span:first-child {
+      margin-top: 3em;
+    }
+    span:last-child {
+      margin-top: 2.5em;
     }
   }
 
@@ -45,6 +73,16 @@ $white: #fff;
     color: $white;
     text-align: left;
     max-width: none;
+    a {
+      margin-left: 80%;
+      text-decoration: none;
+      color: $lightestPurple;
+      font-weight: 600;
+      transition: 0.2s ease-in-out;
+      &:hover {
+        color: rgb(206, 206, 206);
+      }
+    }
   }
 }
 
