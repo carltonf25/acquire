@@ -72,6 +72,13 @@ body {
       color: $deepPurpleHover;
     }
   }
+
+  &.delete {
+    background: tomato;
+    &:hover {
+    background: rgb(202, 78, 56);
+    }
+  }
 }
 
 .card {
