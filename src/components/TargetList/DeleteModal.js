@@ -24,6 +24,9 @@ const DeleteModal = ({ deleteTarget, target, setModalOpen }) => {
   return (
     <div className="overlay">
       <animated.div style={slideDown} className="modal delete-confirm">
+        <button className="close-btn" onClick={() => setModalOpen(false)}>
+          ×
+        </button>
         <h2>Are you sure you want to delete {target.name}?</h2>
         <button
           className="btn primary delete"

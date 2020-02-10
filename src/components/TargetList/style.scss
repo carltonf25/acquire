@@ -19,6 +19,9 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: left;
+  align-items: left;
+  justify-items: left;
 }
 
 .target-card {
@@ -29,6 +32,10 @@ h1 {
   width: 225px;
   border: 1px solid #6c76c64d;
   text-align: left;
+
+  p {
+    color: rgba(0, 0, 0, .65)
+  }
 }
 
 .card-info {

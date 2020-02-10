@@ -64,6 +64,7 @@ const EditModal = ({ target, setModalOpen }) => {
   return (
     <div className="overlay">
       <animated.div style={slideDown} className="modal edit-modal">
+        <button className="close-btn" onClick={() => setModalOpen(false)}>×</button>
         <div className="form-container">
           <form>
             <h3>Basic info:</h3>

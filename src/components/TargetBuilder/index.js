@@ -44,7 +44,7 @@ export const TargetBuilder = () => {
     setTargets([...targets, newTarget]);
     history.push(`/targets`);
 
-    toastMessage('Target created successfully ✅');
+    toastMessage('Target created successfully 👍');
   };
 
   const slideLeft = useSpring({
