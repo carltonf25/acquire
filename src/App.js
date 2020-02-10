@@ -48,6 +48,9 @@ const App = () => {
           <Nav />
           <div className="route-container">
             <Switch>
+              <Route exact path="/">
+                <TargetList />
+              </Route>
               <Route exact path="/targets">
                 <TargetList />
               </Route>
