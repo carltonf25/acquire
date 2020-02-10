@@ -1,2 +1,2 @@
 ## Summary: 
-This project is an example UI for an app that tracks potential acquisitions. Customers can create 'Targets' to track these potential acquisitions. They can also update, delete, and view a detailed breakdown of the Target's financial stats, workflow status (Pending, In Review, Approved, etc.), and contact details for their representative at the Target company. 
+This project is an example UI for an app that tracks potential acquisitions. Customers create 'Targets' to track these potential acquisitions. They can also update Targets, delete them, and view a detailed breakdown of the Target's financial stats.
