@@ -8,7 +8,6 @@ $white: #fff;
 $shadow: 0 4px 6px 0 hsla(300, 8%, 26%, 0.2);
 $hoverShadow: 0 6px 8px 0 hsla(300, 8%, 26%, 0.2);
 
-
 body {
   background: $lightestPurple;
   font-family: ProximaSoft-Regular;
@@ -29,7 +28,7 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr; 
+  grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: auto;
   width: 100%;
 }
@@ -44,21 +43,21 @@ body {
 }
 
 .btn {
-  transition: 0.2s ease-in-out; 
+  transition: 0.2s ease-in-out;
   cursor: pointer;
   &:hover {
     box-shadow: $hoverShadow;
   }
   &.primary {
-  background: $deepPurple;
-  color: $white;
-  padding: 10px;
-  border: none;
-  font-weight: bold;
-  box-shadow: $shadow;
-  &:hover {
-    background: $deepPurpleHover;
-  }
+    background: $deepPurple;
+    color: $white;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    box-shadow: $shadow;
+    &:hover {
+      background: $deepPurpleHover;
+    }
   }
   &.secondary {
     background: none;
@@ -76,7 +75,7 @@ body {
   &.delete {
     background: tomato;
     &:hover {
-    background: rgb(202, 78, 56);
+      background: rgb(202, 78, 56);
     }
   }
 }
@@ -92,4 +91,35 @@ body {
   &:hover {
     box-shadow: $hoverShadow;
   }
-} 
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.modal {
+  position: absolute;
+  width: 40%;
+  height: 200px;
+  background: $white;
+  box-shadow: $shadow;
+  padding: 5em 1em 1em 1em;
+  top: 30vh;
+  left: 30vw;
+  z-index: 6;
+  h2 {
+    margin: 0;
+  }
+  .btn {
+    margin: 2em 0 1em 1em;
+  }
+}

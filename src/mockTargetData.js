@@ -1,6 +1,6 @@
 const mockTargetData = [
   {
-    id: 1,
+    id: '1ab4',
     name: 'App Services, Inc',
     grossProfit: 500000,
     cashFlow: 20000000,
@@ -12,7 +12,7 @@ const mockTargetData = [
     stockPrice: 140.43,
   },
   {
-    id: 2,
+    id: '8zfr',
     name: 'Mint',
     grossProfit: 500000,
     cashFlow: 20000000,
@@ -23,7 +23,7 @@ const mockTargetData = [
     stockPrice: 50.47,
   },
   {
-    id: 3,
+    id: '2b3h',
     name: 'Investr',
     grossProfit: 500000,
     cashFlow: 20000000,
@@ -35,7 +35,7 @@ const mockTargetData = [
     stockPrice: 36.3,
   },
   {
-    id: 4,
+    id: '7h2l',
     name: 'Jim Bob Financial',
     grossProfit: 1000000,
     cashFlow: 25000000,

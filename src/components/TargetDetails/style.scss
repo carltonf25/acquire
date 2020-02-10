@@ -99,3 +99,18 @@ $white: #fff;
   grid-column: 2;
   grid-row: 3;
 }
+
+.edit-modal {
+  width: 60%;
+  padding: 1em;
+  height: auto;
+  top: 10vh;
+  left: 18%;
+  overflow: scroll;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+}
+
+.edit-btn {
+  margin: 2em 0 0 auto;
+}

@@ -1,36 +1,36 @@
-import React, { useState, useContext } from 'react';
-import AppContext from '../../AppContext';
-import { useHistory } from 'react-router-dom';
+import React, { useState, useContext, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
-import style from './style.scss';
+import AppContext from '../../AppContext';
 
-export const TargetBuilder = () => {
-  let [name, setName] = useState('');
-  let [summary, setSummary] = useState('');
-  let [contact, setContact] = useState('');
-  let [status, setStatus] = useState('');
-  let [grossProfit, setGrossProfit] = useState('');
-  let [cashFlow, setCashFlow] = useState('');
-  let [stockPrice, setStockPrice] = useState('');
-  let [yearEstablished, setYearEstablished] = useState('');
+const EditModal = ({ target, setModalOpen }) => {
+  const slideDown = useSpring({
+    to: { opacity: 1, marginTop: 0 },
+    from: { opacity: 0, marginTop: -500 },
+  });
+
+  let [name, setName] = useState(target.name);
+  let [summary, setSummary] = useState(target.summary);
+  let [contact, setContact] = useState(target.contact);
+  let [status, setStatus] = useState(target.status);
+  let [grossProfit, setGrossProfit] = useState(target.grossProfit);
+  let [cashFlow, setCashFlow] = useState(target.cashFlow);
+  let [stockPrice, setStockPrice] = useState(target.stockPrice);
+  let [yearEstablished, setYearEstablished] = useState(target.yearEstablished);
+  const id = target.id;
 
   const appContext = useContext(AppContext);
 
   const { targets, setTargets, toastMessage } = appContext;
 
-  let history = useHistory();
-
-  const generateId = () => {
-    let S4 = () => {
-      return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
-    };
-    return S4();
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
-    let id = generateId();
-    let newTarget = {
+    let targetsCopy = [...targets];
+
+    let targetCopy = targetsCopy.filter(t => {
+      return (t.id = id);
+    });
+
+    let editedTarget = {
       id,
       name,
       summary,
@@ -41,29 +41,31 @@ export const TargetBuilder = () => {
       cashFlow,
       stockPrice,
     };
-    setTargets([...targets, newTarget]);
-    history.push(`/targets`);
 
-    toastMessage('Target created successfully ✅');
+    targetCopy[0] = editedTarget;
+
+    setTargets(targetCopy);
+    setModalOpen(false);
+    toastMessage(`Target updated successfully 👍`);
   };
 
-  const slideLeft = useSpring({
-    to: { opacity: 1, marginRight: 0 },
-    from: { opacity: 0, marginRight: -100 },
-  });
+  const closeOnClickOutside = () => {
+    let modalOverlay = document.querySelector('.overlay');
+
+    modalOverlay.addEventListener('click', event => {
+      if (event.target.className === 'overlay') {
+        setModalOpen(false);
+      }
+    });
+  };
+
+  useEffect(() => {
+    closeOnClickOutside();
+  }, []);
 
   return (
-    <animated.div style={slideLeft}>
-      <div className="builder-wrapper">
-        <div className="form-guide">
-          <h1>Let's build your target</h1>
-          <p>
-            A target is a potential acquisition, containing some basic info
-            about the company, along with key metrics to track the viability and
-            potential risk in acquiring the target.
-          </p>
-        </div>
-
+    <div className="overlay">
+      <animated.div style={slideDown} className="modal edit-modal">
         <div className="form-container">
           <form>
             <h3>Basic info:</h3>
@@ -125,15 +127,15 @@ export const TargetBuilder = () => {
             <br />
             <input
               type="submit"
-              value="Create Target"
+              value="Update Target"
               className="btn primary"
               onClick={handleSubmit}
             />
           </form>
         </div>
-      </div>
-    </animated.div>
+      </animated.div>
+    </div>
   );
 };
 
-export default TargetBuilder;
+export default EditModal;
