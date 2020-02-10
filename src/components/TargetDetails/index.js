@@ -58,6 +58,11 @@ const TargetDetails = () => {
   // component state
   let [modalOpen, setModalOpen] = useState(false);
 
+  // format numbers with commas
+  let numberWithCommas = (x) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   // retrieve target with ID matching URL parameter
   let target = targets.filter(t => {
     return t.id === id;
@@ -79,9 +84,9 @@ const TargetDetails = () => {
             status={target.status}
             contact={target.contact}
           />
-          <MetricCard metric={target.grossProfit} title="GROSS PROFIT" />
-          <MetricCard metric={target.cashFlow} title="CASH FLOW" />
-          <MetricCard metric={target.stockPrice} title="STOCK PRICE" />
+          <MetricCard metric={numberWithCommas(target.grossProfit)} title="GROSS PROFIT" />
+          <MetricCard metric={numberWithCommas(target.cashFlow)} title="CASH FLOW" />
+          <MetricCard metric={numberWithCommas(target.stockPrice)} title="STOCK PRICE" />
           <button
             className="btn secondary edit-btn"
             onClick={() => setModalOpen(true)}

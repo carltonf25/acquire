@@ -14,8 +14,11 @@ h1 {
 }
 .target-card-container {
   grid-column: 2;
+  width: 90vw;
   grid-row: 2;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .target-card {
