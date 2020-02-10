@@ -17,6 +17,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ResponsiveContainer
 } from 'recharts';
 
 const data = [
@@ -100,19 +101,21 @@ const TargetDetails = () => {
         </div>
         <div className="chart-container">
           <h2>Stock Price</h2>
-          <LineChart width={1000} height={300} data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line
-              type="monotone"
-              dataKey="Stock"
-              stroke="#8884d8"
-              activeDot={{ r: 8 }}
-            />
-          </LineChart>{' '}
+          <ResponsiveContainer height={300} width="100%">
+            <LineChart data={data}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Line
+                type="monotone"
+                dataKey="Stock"
+                stroke="#8884d8"
+                activeDot={{ r: 8 }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
       </div>
     </animated.div>
