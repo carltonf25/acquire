@@ -10,7 +10,10 @@ export const Nav = () => {
   return (
     <nav className="side-nav">
       <ul>
-        <li><a target="blank" href="http://github.com/carltonf25/acquire">acquire</a></li>
+        <li><span style={{
+          color: `#6c77c6`,
+          fontWeight: `bold`
+        }}>acquire</span></li>
         <li>
           <Link to="/targets">
             <img alt="home" src={homeIcon} />
