@@ -77,3 +77,19 @@ $hoverShadow: 0 6px 8px 0 hsla(300, 8%, 26%, 0.2);
     }
   }
 }
+
+@media screen and (max-width: 772px) {
+  .builder-wrapper {
+    grid-template-columns: 1fr;
+    width: 100vw;
+  }
+  .form-guide {
+    display: none;
+  }
+
+  .form-container {
+    grid-column: 1;
+    margin: 0;
+    padding-left: 5em;
+  }
+} 

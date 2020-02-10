@@ -16,10 +16,6 @@ body {
 .App {
   text-align: center;
   display: grid;
-  grid-template-areas:
-    'nav main main main'
-    'nav main main main'
-    'nav main main main';
   grid-template-columns: 90px 1fr;
   grid-template-rows: auto;
   height: 100vh;
@@ -34,11 +30,13 @@ body {
 
 .side-nav {
   grid-column: 1/2;
-  grid-row: 1/-1;
+  grid-row: 1;
 }
 
 .route-container {
   grid-area: main;
+  grid-row: 1;
+  grid-column: 2;
 }
 
 .btn {
@@ -139,14 +137,35 @@ body {
 }
 
 @media screen and (max-width: 772px ) {
-  .wrapper {
+  .App {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     width: 100%;
   }
-  .side-nav {display: none;}
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .side-nav {
+    grid-row: 1;
+    max-height: 70px;
+    ul {
+      width: 100%;
+      flex-direction: row;
+      margin: 0;
+      justify-content: center;
+      padding: 0;
+    }
+    li img {
+      width: 2em;
+    }
+
+  }
 
   .route-container {
     grid-column: 1;
+    grid-row: 2;
     width: 100%;
   }
 

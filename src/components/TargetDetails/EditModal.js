@@ -69,14 +69,12 @@ const EditModal = ({ target, setModalOpen }) => {
           <form>
             <h3>Basic info:</h3>
             <label>Name</label>
-            <br />
             <input
               type="text"
               value={name}
               onChange={e => setName(e.target.value)}
             />
             <label>Year Established</label>
-            <br />
             <input
               type="text"
               value={yearEstablished}
@@ -103,7 +101,6 @@ const EditModal = ({ target, setModalOpen }) => {
             </select>
             <h3>Key Metrics:</h3>
             <label>Gross Profit: </label>
-            <br />
             <input
               type="text"
               value={grossProfit}

@@ -109,6 +109,9 @@ $white: #fff;
   overflow: scroll;
   max-height: calc(100vh - 210px);
   overflow-y: auto;
+  form {
+    margin: 0 auto;
+  }
 }
 
 .edit-btn {
@@ -123,12 +126,10 @@ $white: #fff;
     padding: 0;
   }
 
-  .edit-btn {
+  .edit-btn  {
     position: absolute;
-    top: 10px;
-    left: 90vw;
-    border: 1px solid $white;
-    color: $white;
+    top: 0;
+    left: 80vw;
   }
 
   .card-block {
@@ -151,5 +152,15 @@ $white: #fff;
 
   .chart-container {
     display: none;
+  }
+
+.overlay {
+  height: 100vh;
+}
+  .edit-modal {
+    width: 100%;
+    height: 80%;
+    margin: 0;
+    left: 0;
   }
 }

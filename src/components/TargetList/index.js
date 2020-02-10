@@ -34,23 +34,21 @@ export const TargetList = () => {
 
   return (
     <>
-      <div className="wrapper">
-        {modalOpen && (
-          <DeleteModal
-            deleteTarget={deleteTarget}
-            target={selectedTarget}
-            setModalOpen={setModalOpen}
-          />
-        )}
-        <animated.div style={slideLeft}>
-          <h1>Your Targets</h1>
-          <div className="target-card-container">
-            {targets.map(target => (
-              <TargetCard openModal={openModal} target={target} />
-            ))}
-          </div>
-        </animated.div>
-      </div>
+      {modalOpen && (
+        <DeleteModal
+          deleteTarget={deleteTarget}
+          target={selectedTarget}
+          setModalOpen={setModalOpen}
+        />
+      )}
+      <animated.div style={slideLeft}>
+        <h1>Your Targets</h1>
+        <div className="target-card-container">
+          {targets.map(target => (
+            <TargetCard openModal={openModal} target={target} />
+          ))}
+        </div>
+      </animated.div>
     </>
   );
 };
