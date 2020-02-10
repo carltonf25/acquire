@@ -95,7 +95,7 @@ export const TargetBuilder = () => {
             <label>Status</label>
             <select value={status} onChange={e => setStatus(e.target.value)}>
               <option>Select a status</option>
-              <option>Researching</option>
+              <option>In Review</option>
               <option>Pending</option>
               <option>Approved</option>
               <option>Denied</option>

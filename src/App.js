@@ -36,7 +36,10 @@ const App = () => {
   };
 
   useEffect(() => {
-    setTargets(targets);
+    let updateTargets = async () => {
+      await setTargets(targets);
+    };
+    updateTargets();
   }, [targets]);
   return (
     <AppContext.Provider value={appContext}>

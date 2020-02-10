@@ -13,9 +13,7 @@ export const TargetList = () => {
   let [selectedTarget, setSelectedTarget] = useState(null);
 
   const deleteTarget = id => {
-    let targetsCopy = [...targets];
-
-    let newTargetsArray = targetsCopy.filter(target => {
+    let newTargetsArray = targets.filter(target => {
       return target.id !== id;
     });
 

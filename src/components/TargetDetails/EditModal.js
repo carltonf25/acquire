@@ -22,13 +22,10 @@ const EditModal = ({ target, setModalOpen }) => {
 
   const { targets, setTargets, toastMessage } = appContext;
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    let targetsCopy = [...targets];
 
-    let targetCopy = targetsCopy.filter(t => {
-      return (t.id = id);
-    });
+    let targetsCopy = [...targets];
 
     let editedTarget = {
       id,
@@ -42,9 +39,10 @@ const EditModal = ({ target, setModalOpen }) => {
       stockPrice,
     };
 
-    targetCopy[0] = editedTarget;
+    let targetIndex = targetsCopy.findIndex(t => t.id === id);
+    targetsCopy[targetIndex] = editedTarget;
 
-    setTargets(targetCopy);
+    setTargets(targetsCopy);
     setModalOpen(false);
     toastMessage(`Target updated successfully 👍`);
   };
@@ -97,7 +95,7 @@ const EditModal = ({ target, setModalOpen }) => {
             <label>Status</label>
             <select value={status} onChange={e => setStatus(e.target.value)}>
               <option>Select a status</option>
-              <option>Researching</option>
+              <option>In Review</option>
               <option>Pending</option>
               <option>Approved</option>
               <option>Denied</option>
