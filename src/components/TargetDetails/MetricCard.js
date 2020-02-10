@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const MetricCard = ({ metric, title }) => {
   return (
     <div className="card metric-card">
-      <a href="#"><small>EDIT</small></a>
       <span>{`$${metric}`}</span>
       <span>{title}</span>
     </div>

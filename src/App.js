@@ -21,7 +21,7 @@ const App = () => {
 
   useEffect(() => {
     setTargets(targets);
-  }, [targets])
+  }, [targets]);
   return (
     <TargetContext.Provider value={appContext}>
       <Router>

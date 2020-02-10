@@ -25,12 +25,12 @@ h1 {
   padding: 0;
   width: 225px;
   border: 1px solid #6c76c64d;
+  text-align: left;
 }
 
 .card-info {
   grid-column: 1;
-  padding: 1em;
-
+  padding: 15px;
 }
 
 .button-block {
@@ -58,22 +58,25 @@ h1 {
     background: $deepPurple;
     font-size: 12px;
     padding: 5px;
-    &:hover { background: $deepPurpleHover}
+    &:hover {
+      background: $deepPurpleHover;
+    }
   }
   .copy-btn {
     background: #2a47ca;
     font-size: 12px;
     padding: 5px;
-    &:hover { background:#1c3088 }
+    &:hover {
+      background: #1c3088;
+    }
   }
 }
-
 
 .overlay {
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
   margin: 0;
-  top:0;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -86,7 +89,7 @@ h1 {
     height: 200px;
     background: $white;
     box-shadow: $shadow;
-    padding: 1.5em;
+    padding: 5em 1em 1em 1em;
     top: 30vh;
     left: 30vw;
     h2 {
@@ -97,6 +100,3 @@ h1 {
     }
   }
 }
-
-
-

@@ -1,16 +1,17 @@
 // bg-colors
-$inReview:#d4f1f5;
+$inReview: #d4f1f5;
 $pending: #fbfdb7;
 $approved: #15ff9c;
 $denied: tomato;
 $default: #eff3f9;
 
 .status-badge {
-max-width: 50%;
+  max-width: 50%;
   margin: 0 auto;
   font-size: 12px;
   border-radius: 15px;
   padding: 5px;
+  text-align: center;
 }
 
 .inReview {
