@@ -53,81 +53,79 @@ export const TargetBuilder = () => {
   });
 
   return (
-    <animated.div style={slideLeft}>
-      <div className="builder-wrapper">
-        <div className="form-guide">
-          <h1>Let's build your target</h1>
-          <p>
-            A target is a potential acquisition, containing some basic info
-            about the company, along with key metrics to track the viability and
-            potential risk in acquiring the target.
+    <animated.div style={slideLeft} className="builder-wrapper">
+      <div className="form-guide">
+        <h1>Let's build your target</h1>
+        <p>
+          A target is a potential acquisition, containing some basic info
+          about the company, along with key metrics to track the viability and
+          potential risk in acquiring the target.
           </p>
-        </div>
+      </div>
 
-        <div className="form-container">
-          <form>
-            <h3>Basic info:</h3>
-            <label>Name</label>
-            <input
-              type="text"
-              value={name}
-              onChange={e => setName(e.target.value)}
-            />
-            <label>Year Established</label>
-            <input
-              type="text"
-              value={yearEstablished}
-              onChange={e => setYearEstablished(e.target.value)}
-            />
-            <label>Contact</label>
-            <input
-              type="text"
-              value={contact}
-              onChange={e => setContact(e.target.value)}
-            />
-            <label>Summary</label>
-            <textarea
-              value={summary}
-              onChange={e => setSummary(e.target.value)}
-            />
-            <label>Status</label>
-            <select value={status} onChange={e => setStatus(e.target.value)}>
-              <option>Select a status</option>
-              <option>In Review</option>
-              <option>Pending</option>
-              <option>Approved</option>
-              <option>Denied</option>
-            </select>
-            <h3>Key Metrics:</h3>
-            <label>Gross Profit: </label>
-            <input
-              type="text"
-              value={grossProfit}
-              onChange={e => setGrossProfit(e.target.value)}
-            />
-            <br />
-            <label>Cash Flow: </label>
-            <input
-              type="text"
-              value={cashFlow}
-              onChange={e => setCashFlow(e.target.value)}
-            />
-            <br />
-            <label>Stock Price: </label>
-            <input
-              type="text"
-              value={stockPrice}
-              onChange={e => setStockPrice(e.target.value)}
-            />
-            <br />
-            <input
-              type="submit"
-              value="Create Target"
-              className="btn primary"
-              onClick={handleSubmit}
-            />
-          </form>
-        </div>
+      <div className="form-container">
+        <form>
+          <h3>Basic info:</h3>
+          <label>Name</label>
+          <input
+            type="text"
+            value={name}
+            onChange={e => setName(e.target.value)}
+          />
+          <label>Year Established</label>
+          <input
+            type="text"
+            value={yearEstablished}
+            onChange={e => setYearEstablished(e.target.value)}
+          />
+          <label>Contact</label>
+          <input
+            type="text"
+            value={contact}
+            onChange={e => setContact(e.target.value)}
+          />
+          <label>Summary</label>
+          <textarea
+            value={summary}
+            onChange={e => setSummary(e.target.value)}
+          />
+          <label>Status</label>
+          <select value={status} onChange={e => setStatus(e.target.value)}>
+            <option>Select a status</option>
+            <option>In Review</option>
+            <option>Pending</option>
+            <option>Approved</option>
+            <option>Denied</option>
+          </select>
+          <h3>Key Metrics:</h3>
+          <label>Gross Profit: </label>
+          <input
+            type="text"
+            value={grossProfit}
+            onChange={e => setGrossProfit(e.target.value)}
+          />
+          <br />
+          <label>Cash Flow: </label>
+          <input
+            type="text"
+            value={cashFlow}
+            onChange={e => setCashFlow(e.target.value)}
+          />
+          <br />
+          <label>Stock Price: </label>
+          <input
+            type="text"
+            value={stockPrice}
+            onChange={e => setStockPrice(e.target.value)}
+          />
+          <br />
+          <input
+            type="submit"
+            value="Create Target"
+            className="btn primary"
+            onClick={handleSubmit}
+          />
+        </form>
       </div>
     </animated.div>
   );
